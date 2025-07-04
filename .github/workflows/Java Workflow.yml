@@ -36,5 +36,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: check-style-result
-          path: target/check-style-result.yml
+          path: target/checkstyle-result.xml
         
