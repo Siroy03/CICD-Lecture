@@ -20,7 +20,7 @@ jobs:
         - name: Checkout-repository
           uses: actions/checkout@v4
         - name: Ausgabe 
-          run: echo $Grußformel $Begrueßter , das Passwort für $Passwortnutzen ist $Passwort
+          run: echo $Grußformel $Begrueßter , das Passwort für $Passwortnutzen ist ${{secrets.Passwort}}
       
   build-test:
     runs-on: ubuntu-latest
