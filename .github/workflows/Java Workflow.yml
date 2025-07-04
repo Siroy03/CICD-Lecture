@@ -23,4 +23,18 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: junit-results
-          path: target/surefire-reports/
+          path: target/surefire-reports
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout-repository
+        uses: actions/checkout@v4
+      - name: checkstyle
+        run: mvn checkstyle:check
+      - name: Archive Test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: check-style-result
+          path: target/check-style-result.yml
+        
